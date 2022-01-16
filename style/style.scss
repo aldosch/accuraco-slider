@@ -1,0 +1,131 @@
+@import "variables", "keyframes";
+
+.acc-slider {
+  height: $nav-safe-height;
+  @include bp-small {
+    height: $nav-safe-height-desktop;
+  }
+  width: 100%;
+  .slide0,
+  .slide1,
+  .slide2,
+  .slide3 {
+    height: 100%;
+    width: 100%;
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    position: absolute;
+    display: flex;
+  }
+  .content {
+    padding: 1.5rem;
+    @include bp-small {
+      padding: 3.5rem 1.5rem 1.5rem 1.5rem;
+    }
+    width: 100%;
+  }
+  .slide0 {
+    animation: slide0 $animation-duration linear infinite;
+    background: $gradient-mobile-top, $bg-0;
+    background-position: $bg-0-position;
+    @include bp-small {
+      background: linear-gradient(
+          90deg,
+          $bg-content 0%,
+          $bg-content 25%,
+          $bg-transparent 25%,
+          $bg-transparent 100%
+        ),
+        $bg-0;
+      background-position: center center;
+      .content {
+        max-width: 25%;
+      }
+    }
+  }
+  .slide1 {
+    animation: slide1 $animation-duration linear infinite;
+    background: $gradient-mobile-bottom, $bg-1;
+    background-position: $bg-1-position;
+    .content {
+      align-self: flex-end;
+    }
+    @include bp-small {
+      background: linear-gradient(
+          90deg,
+          $bg-transparent 0%,
+          $bg-transparent 25%,
+          $bg-content 25%,
+          $bg-content 50%,
+          $bg-transparent 50%,
+          $bg-transparent 100%
+        ),
+        $bg-1;
+      background-position: center center;
+      .content {
+        max-width: 25%;
+        margin-left: 25%;
+        align-self: flex-start;
+      }
+    }
+  }
+  .slide2 {
+    animation: slide2 $animation-duration linear infinite;
+    background: $gradient-mobile-bottom, $bg-2;
+    background-position: $bg-2-position;
+    .content {
+      align-self: flex-end;
+    }
+    @include bp-small {
+      background: linear-gradient(
+          90deg,
+          $bg-transparent 0%,
+          $bg-transparent 50%,
+          $bg-content 50%,
+          $bg-content 75%,
+          $bg-transparent 75%,
+          $bg-transparent 100%
+        ),
+        $bg-2;
+      background-position: center center;
+      .content {
+        max-width: 25%;
+        margin-left: 50%;
+        align-self: flex-start;
+      }
+    }
+  }
+  .slide3 {
+    animation: slide3 $animation-duration linear infinite;
+    background: $gradient-mobile-top, $bg-3;
+    background-position: $bg-3-position;
+    @include bp-small {
+      background: linear-gradient(
+          90deg,
+          $bg-transparent 0%,
+          $bg-transparent 75%,
+          $bg-content 75%,
+          $bg-content 100%
+        ),
+        $bg-3;
+      background-position: center center;
+      .content {
+        max-width: 25%;
+        margin-left: 75%;
+      }
+    }
+  }
+  .content {
+    color: $title-color;
+    font-family: "Bebas Neue", display;
+    .title {
+      color: $title-color;
+      font-size: 4rem;
+      @include bp-small {
+        & {
+          font-size: 6rem;
+        }
+      }
+    }
+  }
+}

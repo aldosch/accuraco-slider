@@ -1,0 +1,24 @@
+{
+  "name": "dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier --write \"**/*.{scss,sass,html,json,js}\"",
+    "prettier-watch": "npm run prettier && onchange \"**/*.{scss,sass,html,json,js}\" -- prettier --write {{changed}}",
+    "scss-watch": "node-sass --omit-source-map-url style/style.scss css/style.css --watch --output-style nested",
+    "browser-sync": "browser-sync start --server --watch",
+    "dev": "concurrently \"npm run prettier-watch\" \"npm run scss-watch\" \"npm run browser-sync\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "devDependencies": {
+    "browser-sync": "^2.27.7",
+    "concurrently": "^7.0.0",
+    "node-sass": "~7.0.0",
+    "onchange": "~7.1.0",
+    "prettier": "~2.5.1"
+  }
+}

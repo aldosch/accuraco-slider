@@ -1,0 +1,57 @@
+$bg-0: url("http://staging.lukedempsey.me/accuraco/wp-content/uploads/2021/12/01_Accuraco_Pitcher_Partners_Sculpture.jpg");
+$bg-1: url("http://staging.lukedempsey.me/accuraco/wp-content/uploads/2021/12/02_Accuraco_Korowa_Pool.jpg");
+$bg-2: url("http://staging.lukedempsey.me/accuraco/wp-content/uploads/2021/12/03_Accuraco_Rod_laver_Richard.jpg");
+$bg-3: url("http://staging.lukedempsey.me/accuraco/wp-content/uploads/2021/12/04_Accuraco_Parks_Victoria.jpg");
+$bg-0-position: left 45% top 38%;
+$bg-1-position: right 35% top 50%;
+$bg-2-position: right 60% top 75%;
+$bg-3-position: left 37.5% bottom 50%;
+
+$bg-content: rgba(0, 149, 218, 0.9);
+$bg-content-full: rgb(0, 149, 218);
+$bg-transparent: rgba(255, 255, 255, 0);
+
+$title-color: #fff;
+$animation-duration: 30s;
+
+$nav-height: 80px;
+$nav-height-desktop: 160px;
+$nav-safe-height: calc(100vh - #{$nav-height});
+$nav-safe-height-desktop: calc(100vh - #{$nav-height-desktop});
+
+$gradient-mobile-bottom: linear-gradient(
+  0deg,
+  $bg-content 0%,
+  $bg-content 40%,
+  $bg-transparent 40%,
+  $bg-transparent 100%
+);
+$gradient-mobile-top: linear-gradient(
+  0deg,
+  $bg-transparent 0%,
+  $bg-transparent 60%,
+  $bg-content 60%,
+  $bg-content 100%
+);
+
+$bp-small: 767px;
+$bp-medium: 992px;
+$bp-large: 1200px;
+
+@mixin bp-small {
+  @media screen and (min-width: #{$bp-small}) {
+    @content;
+  }
+}
+@mixin bp-medium {
+  @media screen and (min-width: #{$bp-medium}) {
+    @content;
+  }
+}
+@mixin bp-large {
+  @media screen and (min-width: #{$bp-large}) {
+    @content;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
